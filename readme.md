@@ -34,4 +34,3 @@ Download/clone repository, kemudian import database **rental-mobil.sql**, selesa
 -----
 
 #### Note
-Masih terdapat kekurangan, feel free to edit 😆 😆 😆

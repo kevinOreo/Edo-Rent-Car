@@ -1,0 +1,26 @@
+.str-element-single {
+    display: inline-block;
+    vertical-align: 0 !important;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 10px;
+    width: 184px;
+    height: 288px;
+    border-radius: 25px;
+    color: black;
+    text-align: center;
+    margin-bottom: 125px;
+}
+
+.str-element {
+    margin-top: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.desc-1 {
+    /* padding: 10px; */
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}

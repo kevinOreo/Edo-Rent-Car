@@ -53,13 +53,13 @@
 
 							<div class="form-group">
 								<label>Tanggal Rental</label>
-								<input type="date" name="tanggal_rental" class="form-control" required>
+								<input type="date" id="tanggal_rental" name="tanggal_rental" class="form-control" required>
 								<?php echo form_error('tanggal_rental', '<div class="text-small text-danger">','</div>') ?>
 							</div>
 
 							<div class="form-group">
 								<label>Tanggal Kembali</label>
-								<input type="date" name="tanggal_kembali" class="form-control" required>
+								<input type="date" id="tanggal_kembali" name="tanggal_kembali" class="form-control" required>
 							</div>
 							<a href="<?= base_url(); ?>customer/data_mobil" class="btn btn-outline-secondary">Kembali</a>
 							<?php if($dt->status == '1') { ?>

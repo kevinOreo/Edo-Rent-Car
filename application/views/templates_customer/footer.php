@@ -115,6 +115,49 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         // Buka WhatsApp Web di tab baru
         window.open(whatsappURL, '_blank');
     });
+    function addDays(date, days) {
+        const result = new Date(date);
+        result.setDate(result.getDate() + days);
+        return result.toISOString().split("T")[0]; // Format: yyyy-mm-dd
+    }
+
+    // Fungsi untuk mengatur batas tanggal pada datepicker
+    function setupDatepickers() {
+        const today = new Date().toISOString().split("T")[0];
+        const rentalDateInput = document.getElementById("tanggal_rental");
+        const returnDateInput = document.getElementById("tanggal_kembali");
+
+        // Set tanggal minimum untuk "Tanggal Rental"
+        rentalDateInput.setAttribute("min", today);
+
+        // Event Listener untuk "Tanggal Rental"
+        rentalDateInput.addEventListener("change", function () {
+            const rentalDate = rentalDateInput.value;
+            if (rentalDate) {
+                // Set tanggal minimum dan maksimum untuk "Tanggal Kembali"
+                const minReturnDate = rentalDate;
+                const maxReturnDate = addDays(rentalDate, 3); // Maksimal 3 hari dari tanggal rental
+
+                returnDateInput.setAttribute("min", minReturnDate);
+                returnDateInput.setAttribute("max", maxReturnDate);
+
+                // Reset nilai "Tanggal Kembali" jika di luar rentang
+                if (returnDateInput.value < minReturnDate || returnDateInput.value > maxReturnDate) {
+                    returnDateInput.value = ""; // Reset nilai
+                }
+            } else {
+                // Reset atribut "Tanggal Kembali" jika "Tanggal Rental" dihapus
+                returnDateInput.setAttribute("min", today);
+                returnDateInput.removeAttribute("max");
+            }
+        });
+
+        // Set tanggal minimum awal untuk "Tanggal Kembali"
+        returnDateInput.setAttribute("min", today);
+    }
+
+    // Panggil fungsi saat halaman selesai dimuat
+    document.addEventListener("DOMContentLoaded", setupDatepickers);
 </script>
 </body>
 

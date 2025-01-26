@@ -364,68 +364,103 @@
     <center>
     <section id="strength">
             <div class="row">
-                <div class="col-lg-3">
-                    <!-- <div class="str-element-single">
-                        <img src="<?= base_url('') ?>assets/upload/cs.png" alt="customerservice" class="str-element">
-                        <h5 class="desc-1">Responsif</h5>
-                        <p>Customer Support kami akan melayani Anda secara cepat, dan cermat serta sopan.</p>
-                    </div> -->
-                    <div class="card_strength">
-                        <div class="icon_strength">
-                            <img src="<?= base_url('') ?>assets/upload/cs.png" alt="customerservice">
+                <div class="strength-container">
+                        <div class="col-lg-3">
+                        <!-- <div class="str-element-single">
+                            <img src="<?= base_url('') ?>assets/upload/cs.png" alt="customerservice" class="str-element">
+                            <h5 class="desc-1">Responsif</h5>
+                            <p>Customer Support kami akan melayani Anda secara cepat, dan cermat serta sopan.</p>
+                        </div> -->
+                        <div class="card_strength">
+                            <div class="icon_strength">
+                                <img src="<?= base_url('') ?>assets/upload/cs.png" alt="customerservice">
+                            </div>
+                            <h2 class="title_strength">Responsif</h2>
+                            <p class="text_strength">Customer Support kami akan melayani Anda secara cepat, dan cermat serta sopan.</p>
+                            <!-- <button class="button">Learn More</button> -->
                         </div>
-                        <h2 class="title_strength">Responsif</h2>
-                        <p class="text_strength">Customer Support kami akan melayani Anda secara cepat, dan cermat serta sopan.</p>
-                        <!-- <button class="button">Learn More</button> -->
                     </div>
-                </div>
-                <div class="col-lg-3">
-                    <!-- <div class="str-element-single">
-                        <img src="<?= base_url('') ?>assets/upload/24h.png" alt="24hour" class="str-element">
-                        <h5 class="desc-1">24 Jam</h5>
-                        <p>Layanan kami tersedia dipesan 24 Jam. Anda bisa langsung menghubungi kami jika memerlukan unit mobil.</p>
-                    </div> -->
-                    <div class="card_strength">
-                        <div class="icon_strength">
-                            <img src="<?= base_url('') ?>assets/upload/24h.png" alt="24hour">
+                    <div class="col-lg-3">
+                        <!-- <div class="str-element-single">
+                            <img src="<?= base_url('') ?>assets/upload/24h.png" alt="24hour" class="str-element">
+                            <h5 class="desc-1">24 Jam</h5>
+                            <p>Layanan kami tersedia dipesan 24 Jam. Anda bisa langsung menghubungi kami jika memerlukan unit mobil.</p>
+                        </div> -->
+                        <div class="card_strength">
+                            <div class="icon_strength">
+                                <img src="<?= base_url('') ?>assets/upload/24h.png" alt="24hour">
+                            </div>
+                            <h2 class="title_strength">24 Jam</h2>
+                            <p class="text_strength">Layanan kami tersedia dipesan 24 Jam. Anda bisa langsung menghubungi kami jika memerlukan unit mobil.</p>
+                            <!-- <button class="button">Learn More</button> -->
                         </div>
-                        <h2 class="title_strength">24 Jam</h2>
-                        <p class="text_strength">Layanan kami tersedia dipesan 24 Jam. Anda bisa langsung menghubungi kami jika memerlukan unit mobil.</p>
-                        <!-- <button class="button">Learn More</button> -->
                     </div>
-                </div>
-                <div class="col-lg-3">
-                    <!-- <div class="str-element-single">
-                        <img src="<?= base_url('') ?>assets/upload/diskon.png" alt="diskon" class="str-element">
-                        <h5 class="desc-1">Harga Bersaing</h5>
-                        <p>Memiliki Range Harga yang mampu bersaing dengan rental mobil lain.</p>
-                    </div> -->
-                    <div class="card_strength">
-                        <div class="icon_strength">
-                            <img src="<?= base_url('') ?>assets/upload/diskon.png" alt="diskon">
+                    <div class="col-lg-3">
+                        <!-- <div class="str-element-single">
+                            <img src="<?= base_url('') ?>assets/upload/diskon.png" alt="diskon" class="str-element">
+                            <h5 class="desc-1">Harga Bersaing</h5>
+                            <p>Memiliki Range Harga yang mampu bersaing dengan rental mobil lain.</p>
+                        </div> -->
+                        <div class="card_strength">
+                            <div class="icon_strength">
+                                <img src="<?= base_url('') ?>assets/upload/diskon.png" alt="diskon">
+                            </div>
+                            <h2 class="title_strength">Harga Bersaing</h2>
+                            <p class="text_strength">Memiliki Range Harga yang mampu bersaing dengan rental mobil lain.</p>
+                            <!-- <button class="button">Learn More</button> -->
                         </div>
-                        <h2 class="title_strength">Harga Bersaing</h2>
-                        <p class="text_strength">Memiliki Range Harga yang mampu bersaing dengan rental mobil lain.</p>
-                        <!-- <button class="button">Learn More</button> -->
                     </div>
-                </div>
-                <div class="col-lg-3">
-                    <!-- <div class="str-element-single">
-                        <img src="<?= base_url('') ?>assets/upload/driver.png" alt="driver" class="str-element">
-                        <h5 class="desc-1">Berpengalaman</h5>
-                        <p>Driver kami telah berpengalaman. Ramah serta memahami setiap jalan yang akan dilalui.</p>
-                    </div> -->
-                    <div class="card_strength">
-                        <div class="icon_strength">
-                            <img src="<?= base_url('') ?>assets/upload/driver.png" alt="driver">
+                    <div class="col-lg-3">
+                        <!-- <div class="str-element-single">
+                            <img src="<?= base_url('') ?>assets/upload/driver.png" alt="driver" class="str-element">
+                            <h5 class="desc-1">Berpengalaman</h5>
+                            <p>Driver kami telah berpengalaman. Ramah serta memahami setiap jalan yang akan dilalui.</p>
+                        </div> -->
+                        <div class="card_strength">
+                            <div class="icon_strength">
+                                <img src="<?= base_url('') ?>assets/upload/driver.png" alt="driver">
+                            </div>
+                            <h2 class="title_strength">Berpengalaman</h2>
+                            <p class="text_strength">Driver kami telah berpengalaman. Ramah serta memahami setiap jalan yang akan dilalui.</p>
+                            <!-- <button class="button">Learn More</button> -->
                         </div>
-                        <h2 class="title_strength">Berpengalaman</h2>
-                        <p class="text_strength">Driver kami telah berpengalaman. Ramah serta memahami setiap jalan yang akan dilalui.</p>
-                        <!-- <button class="button">Learn More</button> -->
-                    </div>
                 </div>
             </div>
     </section>
     </center>
+    <section id="terms-and-conditions">
+        <h2>Syarat dan Ketentuan Sewa Mobil</h2>
+        <div class="terms-container">
+            <!-- Box 1: Penyewa Dilarang Melakukan -->
+            <div class="term-box forbidden">
+                <div class="icon">❌</div>
+                <h3>Penyewa dilarang melakukan:</h3>
+                <ul>
+                    <li>Menggadaikan kendaraan</li>
+                    <li>Menyewakan kembali kepada orang lain</li>
+                    <li>Menjual kendaraan</li>
+                    <li>Memindah tangankan sewa</li>
+                    <li>Menggunakan mobil untuk tindak kejahatan</li>
+                    <li>Menaikkan harga sewa dari penawaran kami (Mark Up)</li>
+                    <li>Kendaraan hanya dapat dikemudikan oleh orang yang memiliki SIM</li>
+                </ul>
+            </div>
+
+            <!-- Box 2: Persyaratan Sewa Harian -->
+            <div class="term-box requirements">
+                <div class="icon">»</div>
+                <h3>Persyaratan sewa harian:</h3>
+                <ul>
+                    <li>Memberikan identitas diri</li>
+                    <li>Membayar sewa minimal 50% sebelum keberangkatan mobil dari pool / garasi</li>
+                </ul>
+                <p>
+                    Untuk info lebih lanjut dan pemesanan sewa kendaraan lebih dari 14 Hari, silahkan hubungi:
+                    <br>
+                    <strong>0852-3665-7700</strong> atau <strong>0852-4754-2431</strong>
+                </p>
+            </div>
+        </div>
+    </section>
     <br>
 <!--== Why Us Section End ==-->

@@ -47,7 +47,7 @@
 
 		public function _rules(){
 			$this->form_validation->set_rules('nama',"Nama",'required');
-			$this->form_validation->set_rules('username',"Username",'required');
+			$this->form_validation->set_rules('username',"Username",'required, is_unique');
 			$this->form_validation->set_rules('alamat',"Alamat",'required');
 			$this->form_validation->set_rules('gender',"Gender",'required');
 			$this->form_validation->set_rules('telepon',"No. Telepon",'required|numeric');

@@ -36,7 +36,7 @@ $config['base_url'] = 'http://localhost:8080/rentcar-master/';
 |
 */
 // $config['index_page'] = '';
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

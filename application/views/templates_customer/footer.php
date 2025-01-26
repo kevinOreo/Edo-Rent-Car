@@ -27,7 +27,7 @@
                                 <ul class="get-touch">
                                     <li><i class="fa fa-map-marker"></i> Jl. Hr. Soebrantas, Pekanbaru</li>
                                     <li><i class="fa fa-mobile"></i> +62 811 1111 111</li>
-                                    <li><i class="fa fa-envelope"></i> layanan@cardoor.com</li>
+                                    <li><i class="fa fa-envelope"></i> layanan@edorentcar.com</li>
                                 </ul>
                                 <!-- <a href="https://goo.gl/maps/b5mt45MCaPB2" class="map-show" target="_blank">Show Location</a> -->
                             </div>

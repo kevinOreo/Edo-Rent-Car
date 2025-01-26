@@ -129,6 +129,18 @@
 	.single-our-facility {
 		margin-bottom: 0;
 	}
+
+	/* STRENGTH SESSION */
+	.card_strength {
+		flex: 1 1 calc(50% - 30px); /* 2 kolom pada layar tablet */
+		height: auto; /* Tinggi otomatis pada layar kecil */
+		padding: 15px;
+	}
+
+	/* Terms and Conditions */
+	.term-box {
+		flex: 1 1 calc(50% - 20px); /* 2 kolom */
+	}
 }
 
 /* ==== Wide Tablet Layout: 767px ==== */
@@ -296,6 +308,32 @@
 	summary img {
 		width: 40px; /* Ukuran gambar */
 	}
+
+	/* Strength Session */
+	.card_strength {
+		flex: 1 1 calc(50% - 30px); /* 2 kolom pada layar tablet */
+	}
+
+	/* Terms and Conditions */
+	.term-box {
+		flex: 1 1 calc(50% - 20px); /* 2 kolom */
+	}
+
+	#terms-and-conditions h2 {
+		font-size: 24px;
+	}
+
+	.term-box .icon {
+		font-size: 28px;
+	}
+
+	.term-box ul li {
+		font-size: 14px;
+	}
+
+	.requirements p {
+		font-size: 14px;
+	}
 }
 
 /* ==== Mobile Layout: 320px ==== */
@@ -456,5 +494,35 @@
 
 	.details-content-wrapper {
 		padding: 10px;
+	}
+
+	/* Strength Session */
+	.card_strength {
+		flex: 1 1 100%; /* 1 kolom pada layar mobile */
+	}
+
+	/* Terms and Conditions */
+	.terms-container {
+		flex-direction: column;
+	}
+
+	.term-box {
+		flex: 1 1 100%; /* 1 kolom */
+	}
+
+	#terms-and-conditions h2 {
+		font-size: 22px;
+	}
+
+	.term-box .icon {
+		font-size: 24px;
+	}
+
+	.term-box ul li {
+		font-size: 14px;
+	}
+
+	.requirements p {
+		font-size: 14px;
 	}
 }

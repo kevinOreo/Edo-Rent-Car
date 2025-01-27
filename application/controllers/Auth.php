@@ -10,7 +10,7 @@
 				$this->load->view('templates_admin/footer');
 			}else{
 				$username = $this->input->post('username');
-				$password = md5($this->input->post('password'));	
+				$password = password_verify($this->input->post('password'));	
 
 				$cek = $this->rental_model->cek_login($username, $password);
 
@@ -65,7 +65,7 @@
 				$this->load->view('ganti_password');
 				$this->load->view('templates_admin/footer');
 			}else{
-				$data = array( 'password' => md5($pass_baru));
+				$data = array( 'password' => password_hash($pass_baru), PASSWORD_DEFAULT);
 				$id   = array( 'id_customer' => $this->session->userdata('id_customer'));
 
 				$this->rental_model->update_password($id, $data, 'customer');

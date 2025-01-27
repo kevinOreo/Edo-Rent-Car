@@ -17,7 +17,7 @@
 				$gender			= $this->input->post('gender');
 				$no_telp		= $this->input->post('telepon');
 				$no_ktp			= $this->input->post('no_ktp');
-				$password		= md5($this->input->post('password'));
+				$password		= password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 				$role_id		= '2';
 
 				$data = array(
@@ -47,12 +47,12 @@
 
 		public function _rules(){
 			$this->form_validation->set_rules('nama',"Nama",'required');
-			$this->form_validation->set_rules('username',"Username",'required, is_unique');
+			$this->form_validation->set_rules('username',"Username",'required|is_unique[customer.username]',[ 'is_unique' => 'Username Sudah Diambil!' ]);
 			$this->form_validation->set_rules('alamat',"Alamat",'required');
 			$this->form_validation->set_rules('gender',"Gender",'required');
 			$this->form_validation->set_rules('telepon',"No. Telepon",'required|numeric');
 			$this->form_validation->set_rules('no_ktp',"No. KTP",'required|numeric');
-			$this->form_validation->set_rules('password',"Password",'required');
+			$this->form_validation->set_rules('password',"Password",'required|min_length[8]');
 		}
 	}
 

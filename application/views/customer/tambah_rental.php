@@ -35,12 +35,12 @@
 								<label>Harga Sewa/Hari</label>
 								<input type="hidden" name="id_mobil" value="<?php echo $dt->id_mobil ?>">
 								<input type="hidden" name="nama_rental" value="<?php echo $dt->nama_rental ?>">
-								<input type="text" name="harga" class="form-control" value="<?php echo $dt->harga ?>" readonly>
+								<input type="text" name="harga" class="form-control" value="Rp. <?php echo number_format($dt->harga,0,',','.') ?>" readonly>
 							</div>
 
 							<div class="form-group">
 								<label>Denda/Hari</label>
-								<input type="text" name="denda" class="form-control" value="<?php echo $dt->denda ?>" readonly>
+								<input type="text" name="denda" class="form-control" value="Rp. <?php echo number_format($dt->denda,0,',','.') ?>" readonly>
 							</div>
 
 							<div class="form-group">

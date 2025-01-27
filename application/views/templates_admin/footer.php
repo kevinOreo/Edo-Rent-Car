@@ -75,6 +75,5 @@
         // Menampilkan waktu saat pertama kali halaman dibuka
         showCurrentTime();
 </script>
-
 </body>
 </html>

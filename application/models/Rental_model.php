@@ -46,7 +46,7 @@
 
 			$result = $this->db
 							->where('username',$username)
-							->where('password',md5($password))
+							->where('password',password_verify($password))
 							->limit(1)
 							->get('customer');
 

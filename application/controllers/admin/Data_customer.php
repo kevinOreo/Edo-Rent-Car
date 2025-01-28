@@ -36,7 +36,7 @@
 				$no_ktp			= $this->input->post('no_ktp');
 				$role_id		= $this->input->post('role_id');
 				$nama_rental	= $this->input->post('nama_rental');
-				$password		= md5($this->input->post('password'));
+				$password		= password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 
 				$data = array(
 					'nama'      	=> $nama,
@@ -85,7 +85,7 @@
 				$no_ktp			= $this->input->post('no_ktp');
 				$role_id		= $this->input->post('role_id');
 				$nama_rental	= $this->input->post('nama_rental');
-				$password		= md5($this->input->post('password'));
+				$password		= password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 
 				$data = array(
 					'nama'      	=> $nama,

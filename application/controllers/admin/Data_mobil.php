@@ -116,6 +116,8 @@ class Data_mobil extends CI_Controller{
 			$mp3_player				= $this->input->post('mp3_player');
 			$central_lock			= $this->input->post('central_lock');
 			$gambar					= $_FILES['gambar']['name'];
+
+			$mobil = $this->rental_model->ambil_id_mobil($id);
 			
 			if($gambar){
 				$config['upload_path']		= './assets/upload';
@@ -124,9 +126,13 @@ class Data_mobil extends CI_Controller{
 				$this->load->library('upload', $config);
 
 				if($this->upload->do_upload('gambar')){
-					$gambar = $this->upload->data('file_name');
-					$this->db->set('gambar', $gambar);
-				}else{
+					if($mobil->gambar && file_exists('./assets/upload/' . $mobil->gambar)) {
+						unlink('./assets/upload' . $mobil->gambar);
+					}
+				// Ambil data gambar yang diunggah
+                $gambar = $this->upload->data('file_name');
+                $this->db->set('gambar', $gambar);
+				} else {
 					echo $this->upload->display_errors();
 				}
 			}

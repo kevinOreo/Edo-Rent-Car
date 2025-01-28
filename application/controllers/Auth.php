@@ -57,7 +57,7 @@
 			$pass_baru		= $this->input->post('pass_baru');
 			$ulang_pass		= $this->input->post('ulang_pass');
 
-			$this->form_validation->set_rules('pass_baru','Password baru','required');
+			$this->form_validation->set_rules('pass_baru','Password baru','required|trim|min_length[8]');
 			$this->form_validation->set_rules('ulang_pass','Ulangi Password','required|matches[pass_baru]');
 
 			if($this->form_validation->run() == FALSE){
@@ -65,7 +65,7 @@
 				$this->load->view('ganti_password');
 				$this->load->view('templates_admin/footer');
 			}else{
-				$data = array( 'password' => password_hash($pass_baru), PASSWORD_DEFAULT);
+				$data = array( 'password' => password_hash($this->input->post('ulang_pass'), PASSWORD_DEFAULT));
 				$id   = array( 'id_customer' => $this->session->userdata('id_customer'));
 
 				$this->rental_model->update_password($id, $data, 'customer');

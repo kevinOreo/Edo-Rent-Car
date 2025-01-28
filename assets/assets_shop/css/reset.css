@@ -548,6 +548,38 @@ ul li {
 .requirements p strong {
 	color: #007bff;
 }
+
+/* Table Customs */
+.table-custom {
+	font-family: "Arima", system-ui;
+	width: 100%;
+	border-collapse: collapse;
+	border-radius: 0.5rem;
+}
+
+.table-custom th,
+.table-custom td {
+	padding: 12px;
+	text-align: left;
+}
+
+.table-custom th {
+	background-color: #343a40; /* Warna dark */
+	color: white;
+}
+
+.table-custom span {
+	font-size: 1rem;
+}
+
+.table-custom tbody tr:nth-child(even) {
+	background-color: #f8f9fa; /* Warna strip */
+}
+
+/* .table-custom tbody tr:hover {
+	background-color: #e9ecef; /* Warna hover */
+/* } */
+
 /**
 *******************************************
 * Reset CSS End

@@ -315,24 +315,15 @@
 	}
 
 	/* Terms and Conditions */
-	.term-box {
-		flex: 1 1 calc(50% - 20px); /* 2 kolom */
+	.tc-container {
+		max-width: 800px; /* Example: Set max width for medium screens */
 	}
 
-	#terms-and-conditions h2 {
-		font-size: 24px;
+	.box {
+		padding: 10px; /* Example: Adjust padding for boxes */
 	}
-
-	.term-box .icon {
-		font-size: 28px;
-	}
-
-	.term-box ul li {
-		font-size: 14px;
-	}
-
-	.requirements p {
-		font-size: 14px;
+	.box-2 {
+		margin-right: 0;
 	}
 }
 
@@ -502,27 +493,15 @@
 	}
 
 	/* Terms and Conditions */
-	.terms-container {
-		flex-direction: column;
+	.tc-container {
+		padding: 10px; /* Example: Add padding for small screens */
 	}
 
-	.term-box {
-		flex: 1 1 100%; /* 1 kolom */
+	.box {
+		padding: 15px; /* Example: Adjust padding for boxes */
+		width: 50%; /* Example: Make boxes full width */
 	}
-
-	#terms-and-conditions h2 {
-		font-size: 22px;
-	}
-
-	.term-box .icon {
-		font-size: 24px;
-	}
-
-	.term-box ul li {
-		font-size: 14px;
-	}
-
-	.requirements p {
-		font-size: 14px;
+	.box-2 {
+		margin-right: 0;
 	}
 }

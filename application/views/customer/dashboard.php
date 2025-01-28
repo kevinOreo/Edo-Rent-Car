@@ -428,39 +428,43 @@
             </div>
     </section>
     </center>
-    <section id="terms-and-conditions">
-        <h2>Syarat dan Ketentuan Sewa Mobil</h2>
-        <div class="terms-container">
-            <!-- Box 1: Penyewa Dilarang Melakukan -->
-            <div class="term-box forbidden">
-                <div class="icon">❌</div>
-                <h3>Penyewa dilarang melakukan:</h3>
-                <ul>
-                    <li>Menggadaikan kendaraan</li>
-                    <li>Menyewakan kembali kepada orang lain</li>
-                    <li>Menjual kendaraan</li>
-                    <li>Memindah tangankan sewa</li>
-                    <li>Menggunakan mobil untuk tindak kejahatan</li>
-                    <li>Menaikkan harga sewa dari penawaran kami (Mark Up)</li>
-                    <li>Kendaraan hanya dapat dikemudikan oleh orang yang memiliki SIM</li>
-                </ul>
-            </div>
-
-            <!-- Box 2: Persyaratan Sewa Harian -->
-            <div class="term-box requirements">
-                <div class="icon">»</div>
-                <h3>Persyaratan sewa harian:</h3>
-                <ul>
-                    <li>Memberikan identitas diri</li>
-                    <li>Membayar sewa minimal 50% sebelum keberangkatan mobil dari pool / garasi</li>
-                </ul>
-                <p>
-                    Untuk info lebih lanjut dan pemesanan sewa kendaraan lebih dari 14 Hari, silahkan hubungi:
-                    <br>
-                    <strong>0852-3665-7700</strong> atau <strong>0852-4754-2431</strong>
-                </p>
+        <div class="col-lg-12">
+            <div class="section-title  text-center">
+                <h2 class="tc">Syarat dan Ketentuan Sewa Mobil</h2>
+                <span class="title-line"><i class="fa fa-car"></i></span>
+                <p>Do | Don't</p>
             </div>
         </div>
-    </section>
+    <div class="tc-container">
+        <!-- Box 1: Penyewa Dilarang Melakukan -->
+        <div class="box box-1">
+            <h3><i class="fa fa-ban"></i> Penyewa Dilarang Melakukan:</h3>
+            <div class="item"><i class="fa fa-times-circle"></i> Menggunakan mobil di luar wilayah Jawa Timur dan Bali tanpa izin tertulis dari pihak rental.</div>
+            <div class="item"><i class="fa fa-times-circle"></i> Memindahtangankan mobil kepada pihak ketiga tanpa sepengetahuan dan persetujuan rental.</div>
+            <div class="item"><i class="fa fa-times-circle"></i> Menggunakan kendaraan untuk kegiatan ilegal, balapan, atau di medan ekstrem seperti jalur off-road.</div>
+            <div class="item"><i class="fa fa-times-circle"></i> Mengembalikan mobil dalam kondisi kotor atau rusak akibat kelalaian.</div>
+            <div class="item"><i class="fa fa-times-circle"></i> Menggunakan kendaraan untuk tujuan yang tidak sesuai perjanjian, seperti untuk aktivitas kriminal.</div>
+        </div>
+
+        <!-- Box 2: Persyaratan Sewa -->
+        <div class="box box-2">
+            <h3><i class="fa fa-clipboard"></i> Persyaratan Sewa:</h3>
+            <div class="item"><i class="fa fa-id-card"></i> Menyerahkan fotokopi KTP dan SIM A yang masih berlaku (asli diperlihatkan saat sewa).</div>
+            <div class="item"><i class="fa fa-file-text"></i>Menyerahkan jaminan tambahan berupa dokumen resmi (NPWP, paspor, atau lainnya) atau deposit sesuai kesepakatan.</div>
+            <div class="item"><i class="fa fa-pencil"></i>Penyewa wajib mengisi data diri lengkap melalui sistem informasi rental. Semua data harus valid dan sesuai dokumen resmi.</div>
+            <div class="item"><i class="fa fa-calendar"></i>Penyewa baru hanya diperbolehkan menyewa kendaraan selama maksimal 3 hari.</div>
+            <div class="item"><i class="fa fa-check-square"></i>Penyewa baru akan melalui proses verifikasi tambahan, seperti konfirmasi telepon atau kunjungan alamat jika diperlukan.</div>
+        </div>
+
+        <!-- Box 3: Ketentuan Sewa -->
+        <div class="box box-3">
+            <h3><i class="fa fa-file-text-o"></i> Ketentuan Sewa:</h3>
+            <div class="item"><i class="fa fa-money"></i>Biaya sewa dibayarkan lunas di muka untuk durasi yang telah disepakati. Deposit keamanan wajib diberikan dan akan dikembalikan setelah mobil dikembalikan dalam kondisi baik.</div>
+            <div class="item"><i class="fa fa-car"></i>Mobil harus dikembalikan dalam kondisi sebagaimana diterima. Biaya perbaikan atau pembersihan akibat kelalaian penyewa menjadi tanggung jawab penyewa.</div>
+            <div class="item"><i class="fa fa-shield"></i>Kendaraan dilengkapi dengan asuransi dasar. Namun, penyewa wajib menanggung biaya klaim atau kerusakan yang tidak tercover oleh asuransi, seperti akibat kelalaian.</div>
+            <div class="item"><i class="fa fa-calendar-times-o"></i>Pembatalan dalam waktu kurang dari 24 jam sebelum waktu sewa dikenakan biaya sebesar 50% dari total tarif sewa. Perubahan jadwal atau durasi harus dikonfirmasi minimal 24 jam sebelumnya.</div>
+            <div class="item"><i class="fa fa-exclamation-triangle"></i>Penyalahgunaan kendaraan, pemalsuan data, atau pelanggaran aturan akan dikenakan sanksi tegas, termasuk pelaporan ke pihak berwajib.</div>
+        </div>
+    </div>
     <br>
 <!--== Why Us Section End ==-->

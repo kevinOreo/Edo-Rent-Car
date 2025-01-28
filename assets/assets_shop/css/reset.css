@@ -449,104 +449,96 @@ ul li {
 	width: min(30vw, 300px);
 }
 
-/* General Styling */
-#terms-and-conditions {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 20px;
-	font-family: Arial, sans-serif;
-	background-color: #f9f9f9;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#terms-and-conditions h2 {
+/* Terms and Conditions */
+.tc {
 	text-align: center;
 	color: #333;
-	font-size: 28px;
+	margin-bottom: 40px;
+	font-size: 2.5em;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.tc-container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.box {
+	background: #fff;
+	border: 2px solid;
+	border-radius: 15px;
+	padding: 25px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	margin-bottom: 30px;
 }
 
-/* Container for the two boxes */
-.terms-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-	justify-content: center;
+.box:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-/* Styling for each box */
-.term-box {
-	flex: 1 1 calc(50% - 20px);
-	padding: 20px;
+.box h3 {
+	margin-top: 0;
+	font-size: 1.8em;
+	color: #fff;
+	background: linear-gradient(135deg, #ff6b6b, #ff0000);
+	padding: 15px;
 	border-radius: 10px;
-	background-color: #fff;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.term-box:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Icon Styling */
-.term-box .icon {
-	font-size: 32px;
 	text-align: center;
+	margin-bottom: 20px;
+}
+
+.item {
 	margin-bottom: 15px;
+	color: #555;
+	font-size: 1rem;
+	display: flex;
+	align-items: flex-start;
 }
 
-.forbidden .icon {
-	color: #ff0000; /* Red color for forbidden icon */
-}
-
-.requirements .icon {
-	color: #fab702; /* Yellow color for requirements icon */
+.item i {
+	margin-right: 10px;
+	color: #ff6b6b;
+	font-size: 1.2em;
+	margin-top: 5px;
 }
 
 /* Box 1: Penyewa Dilarang Melakukan */
-.forbidden {
-	border: 2px solid #ff0000; /* Red border */
+.box-1 {
+	border-color: #ff6b6b;
+	width: 98.7%;
 }
 
-.forbidden h3 {
-	color: #ff0000; /* Red text for heading */
+.box-1 h3 {
+	background: linear-gradient(135deg, #ff6b6b, #ff0000);
 }
 
-/* Box 2: Persyaratan Sewa Harian */
-.requirements {
-	border: 2px solid #fab702; /* Yellow border */
+/* Box 2: Persyaratan Sewa */
+.box-2 {
+	border-color: #fab702;
+	width: 48%;
+	display: inline-block;
+	margin-right: 2.5%;
+	vertical-align: top; /* Menjaga box tetap sejajar */
 }
 
-.requirements h3 {
-	color: #fab702; /* Yellow text for heading */
+.box-2 h3 {
+	background: linear-gradient(135deg, #fab702, #ff8c00);
 }
 
-/* List Styling */
-.term-box ul {
-	padding-left: 20px;
-	margin: 0;
-	list-style-type: disc;
+/* Box 3: Ketentuan Sewa */
+.box-3 {
+	border-color: #007bff;
+	width: 48%;
+	display: inline-block;
+	vertical-align: top; /* Menjaga box tetap sejajar */
 }
 
-.term-box ul li {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	color: #555;
-	font-size: 16px;
-}
-
-/* Contact Info Styling */
-.requirements p {
-	margin-top: 15px;
-	font-size: 16px;
-	color: #333;
-	text-align: center;
-}
-
-.requirements p strong {
-	color: #007bff;
+.box-3 h3 {
+	background: linear-gradient(135deg, #007bff, #00bfff);
 }
 
 /* Table Customs */
@@ -576,9 +568,7 @@ ul li {
 	background-color: #f8f9fa; /* Warna strip */
 }
 
-/* .table-custom tbody tr:hover {
-	background-color: #e9ecef; /* Warna hover */
-/* } */
+/*  */
 
 /**
 *******************************************

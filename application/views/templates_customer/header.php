@@ -102,9 +102,12 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <!-- <li><a href="<?php echo base_url('customer/dashboard') ?>">Beranda</a></li> -->
+                                <li><a href="<?php echo base_url('customer/dashboard') ?>">Beranda</a></li>
+
+                                <li><a href="<?php echo base_url('customer/dashboard/about_us') ?>">Tentang Kami</a></li>
 
                                 <li><a href="<?php echo base_url('customer/data_mobil') ?>">Mobil</a></li>
+
 
                                 <?php if($this->session->userdata('nama')) { ?>
 

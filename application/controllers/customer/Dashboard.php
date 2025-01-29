@@ -25,5 +25,11 @@
 			$this->load->view('customer/detail_mobil', $data);
 			$this->load->view('templates_customer/footer');
 		}
+
+		public function about_us(){
+			$this->load->view('templates_customer/header');
+			$this->load->view('customer/about_us');
+			$this->load->view('templates_customer/footer');
+		}
 	}
 ?>

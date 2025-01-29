@@ -1,4 +1,4 @@
-<body>
+<body class="layout">
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
@@ -24,10 +24,10 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">ADMIN PANEL</a>
+            ADMIN PANEL
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">AP</a>
+            
           </div>
           <ul class="sidebar-menu">
 
@@ -39,7 +39,7 @@
 
               <li class="<?php echo (strpos(current_url(), "admin/data_customer") !== false) ? "active" : ""?>"><a class="nav-link" href="<?php echo base_url('admin/data_customer') ?>"><i class="fas fa-user"></i> <span>Data Customer</span></a></li>
 
-              <li class="<?php echo (strpos(current_url(), "admin/data_driver") !== false) ? "active" : ""?>"><a class="nav-link" href="<?php echo base_url('admin/data_driver') ?>"><i class="fa fa-users" aria-hidden="true"></i> <span>Data Driver</span></a></li>
+              <li class="<?php echo (strpos(current_url(), "admin/data_driver") !== false) ? "active" : ""?>"><a class="nav-link" href="<?php echo base_url('admin/data_driver') ?>"><i class="fas fa-users"></i> <span>Data Driver</span></a></li>
 
               <li class="<?php echo (strpos(current_url(), "admin/transaksi") !== false) ? "active" : ""?>"><a class="nav-link" href="<?php echo base_url('admin/transaksi') ?>"><i class="fas fa-random"></i> <span>Transaksi</span></a></li>
 

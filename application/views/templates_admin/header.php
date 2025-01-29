@@ -15,5 +15,8 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/assets_stisla') ?>/assets/css/components.css">
 
   <!--=== FontAwesome CSS ===-->
-    <link href="<?php echo base_url() ?>assets/assets_shop/css/font-awesome.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>assets/assets_shop/css/font-awesome.css" rel="stylesheet">
+
+  <!-- DataTables -->
+  <link rel="stylesheet" href="<?= base_url('assets/assets_stisla') ?>/assets/css/datatables.min.css">
 </head>

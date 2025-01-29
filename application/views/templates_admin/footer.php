@@ -29,8 +29,26 @@
   <!-- Page Specific JS File -->
   <script src="<?php echo base_url('assets/assets_stisla') ?>/assets/js/page/index-0.js"></script>
 
+  <!-- SweetAlert 2 -->
   <script src="<?= base_url('assets/assets_stisla') ?>/assets/js/sweetalert2.all.min.js"></script>
+
+  <!-- My Script.js -->
   <script src="<?= base_url('assets/assets_stisla') ?>/assets/js/alert.js"></script>
+
+  <!-- DataTables -->
+  <script src="<?= base_url('assets/assets_stisla')?>/assets/js/datatables.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#myTable').DataTable({
+        paging: true,       // Aktifkan pagination
+        searching: true,    // Aktifkan pencarian
+        ordering: true,     // Aktifkan pengurutan
+        info: true,         // Tampilkan informasi jumlah data
+        pageLength: 10,     // Jumlah baris per halaman
+        responsive: true    // Aktifkan mode responsif
+    });
+});
+  </script>
   <script>
   document.getElementById('driver-option').addEventListener('change', function() {
     var driverSelectGroup = document.getElementById('driver-select-group');
@@ -74,6 +92,14 @@
 
         // Menampilkan waktu saat pertama kali halaman dibuka
         showCurrentTime();
+</script>
+<script>
+$(document).ready(function() {
+    $("[data-toggle='sidebar']").click(function(e) {
+        e.preventDefault();
+        $("body").toggleClass("sidebar-mini");
+    });
+});
 </script>
 </body>
 </html>

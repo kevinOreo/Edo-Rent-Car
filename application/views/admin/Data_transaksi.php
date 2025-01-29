@@ -6,22 +6,25 @@
 
 		        <?php echo $this->session->flashdata('pesan') ?>
 
-		<table class="table-responsive table table-hover table-bordered">
-			<tr>
-				<th>No</th>
-				<th>Customer</th>
-				<th>Mobil</th>
-				<th>Tgl. Rental</th>
-				<th>Tgl. Kembali</th>
-				<!-- <th>Harga/Hari</th> -->
-				<!-- <th>Denda/Hari</th> -->
-				<!-- <th>Total Denda</th> -->
-				<th>Tgl. Dikembalikan</th>
-				<!-- <th>Status Pengembalian</th> -->
-				<th>Status Rental</th>
-				<th>Bukti Pembayaran</th>
-				<th>Action</th>
-			</tr>
+		<table id="myTable" class="table-responsive table table-hover">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Customer</th>
+					<th>Mobil</th>
+					<th>Tgl. Rental</th>
+					<th>Tgl. Kembali</th>
+					<!-- <th>Harga/Hari</th> -->
+					<!-- <th>Denda/Hari</th> -->
+					<!-- <th>Total Denda</th> -->
+					<th>Tgl. Dikembalikan</th>
+					<!-- <th>Status Pengembalian</th> -->
+					<th>Status Rental</th>
+					<th>Bukti Pembayaran</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
 			<?php
 				$no = 1;
 				foreach ($transaksi as $tr) : ?>
@@ -122,6 +125,7 @@
 					</tr>
 
 			<?php endforeach; ?>
+			</tbody>
 		</table>
 	</section>
 </div>

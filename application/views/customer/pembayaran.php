@@ -27,17 +27,16 @@
 								<td>:</td>
 								<td><?= $tr->no_plat ?></td>
 							</tr>
-
 							<tr>
 								<th>Tanggal Rental</th>
 								<td>: </td>
-								<td><?php echo $tr->tanggal_rental ?></td>
+								<td><?= date("d/m/Y", strtotime($tr->tanggal_rental)) ?></td>
 							</tr>
 
 							<tr>
 								<th>Tanggal Kembali</th>
 								<td>: </td>
-								<td><?php echo $tr->tanggal_kembali ?></td>
+								<td><?= date("d/m/Y", strtotime($tr->tanggal_kembali)) ?></td>
 							</tr>
 
 							<tr>
@@ -48,9 +47,12 @@
 
 							<tr>
 								<?php 
-									$x = strtotime($tr->tanggal_kembali);
-									$y = strtotime($tr->tanggal_rental);
-									$jmlHari = abs(($x - $y)/(60*60*24));
+									$x = explode("T", $tr->tanggal_kembali)[0];
+									$y = explode("T", $tr->tanggal_rental)[0];
+
+									$x1 = strtotime($x);
+									$y1 = strtotime($y);
+									$jmlHari = floor(($x1 - $y1)/(60*60*24));
 
 								?>
 								<th>Jumlah Hari Sewa</th>
@@ -84,6 +86,17 @@
 								<td>: </td>
 								<td><button class="btn btn-sm btn-success" disabled="disabled">Rp. <?php echo number_format(($tr->harga * $jmlHari),0,',','.') ?></button></td>
 							</tr>
+							<?php 
+								if($tr->status_pembayaran == '1'){ ?>
+								<tr class="text-danger">
+									<th>TOTAL DENDA</th>
+									<td>:</td>
+									<td><button class="btn btn-sm btn-danger" disabled="disabled">Rp. <?= number_format(($tr->total_denda),0,',','.') ?></button></td>
+								</tr>
+							<?php
+								}
+							?>
+							
 							<tr>
 								<td></td>
 								<td></td>

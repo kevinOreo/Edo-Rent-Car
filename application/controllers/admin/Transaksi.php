@@ -101,13 +101,22 @@
 			$status_rental 			= $this->input->post('status_rental');
 			$status_pengembalian	= $this->input->post('status_pengembalian');
 			$tanggal_kembali		= $this->input->post('tanggal_kembali');
+
+			$harga					= $this->input->post('harga');
 			$denda					= $this->input->post('denda');
 
-			$x						= strtotime($tanggal_pengembalian);
-			$y						= strtotime($tanggal_kembali);
-			$selisih				= abs($x - $y)/(60*60*24);
-			$total_denda			= $selisih * $denda;
 			
+			$x = strtotime($tanggal_pengembalian);
+			$y = strtotime($tanggal_kembali);
+
+			$jmlh = ceil(($x - $y)/(60*60*24));
+
+			if($jmlh > 1) {
+				$total_denda			= ($jmlh * $denda) + $harga;
+			}
+			else{
+				$total_denda			= $jmlh * $denda;
+			}
 
 			$data = array(
 				'tanggal_pengembalian'	=> $tanggal_pengembalian,

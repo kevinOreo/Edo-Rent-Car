@@ -11,7 +11,8 @@
                     <img height="50%" src="<?php echo base_url() ?>assets/assets_shop/img/logo.png">
                     <h2>Detail Transaksi : #<?= $dt->id_rental ?></h2>
                     <h3>Nama Rental      : <?= $dt->nama_rental ?></h3>
-                    <a class="btn btn-sm btn-success text-white wa-button" value="<?= $dt->noTelp ?>" id="btn-wa"><i class="fa fa-whatsapp"></i></a>    
+                    <a class="btn btn-sm btn-success text-white wa-button" value="<?= $dt->noTelp ?>" id="btn-wa"><i class="fa fa-whatsapp"></i></a>
+                    <button type="button" readonly class="btn btn-sm btn-success" value="<?= $dt->status_rental ?>"><?=$dt->status_rental ?></button>    
                 </center><hr>
                 <div class="row">
                     <!-- Data customer -->
@@ -69,7 +70,7 @@
                     <?php foreach ($driver as $dv) : ?>
                         <div class="form-group">
                             <center><label>Foto Driver</label><br>
-                            <img height="234px" src="<?= base_url() . 'assets/upload/' . $dv->fotoDriver ?>" alt="foto"></center>
+                            <img draggable="false" height="234px" src="<?= base_url() . 'assets/upload/' . $dv->fotoDriver ?>" alt="foto"></center>
                         </div>
                         <div class="form-group">
                             <label>Nama Driver  :</label>
@@ -89,24 +90,53 @@
                         </div>
                         <div class="form-group">
                             <label>Tanggal Kembali</label>
-                            <input type="text" id="tglkembali" disabled class="form-control" value="<?= $dt->tanggal_kembali ?>">
+                            <input type="text" id="tglkembali" disabled class="form-control" value="<?= $dt->tanggal_pengembalian ?>">
                         </div>
                         <div class="form-group">
                             <label>Jumlah Hari Sewa</label>
                             <?php 
                                 $x = strtotime($dt->tanggal_kembali);
                                 $y = strtotime($dt->tanggal_rental);
-                                $jmlh = abs(($x - $y)/(60*60*24));
+                                $jmlh = floor(($x - $y)/(60*60*24));
                             ?>
                             <input type="text" id="jmlhHari" disabled class="form-control" value="<?= $jmlh ?> Hari">
                         </div>
+                        <?php 
+                            $harga = $dt->harga;
+                            $total = $harga * $jmlh;
+                        ?>
                         <div class="form-group">
-                            <label>Total Biaya</label>
-                            <input type="text" id="totalbiaya" disabled class="form-control" value="Rp. <?= number_format($dt->harga,0,',','.') ?>">
+                            <label>Total Bayar</label>
+                            <button type="button" id="total_bayar" disabled class="form-control bg-primary text-white" value="Rp. <?= number_format($total,0,',','.') ?>">
+                                Rp. <?= number_format($total,0,',','.') ?></button>
                         </div>
+                        <?php 
+                            $denda = $dt->denda;
+                            $harga = $dt->harga;
+
+                            $x = strtotime($dt->tanggal_pengembalian);
+                            $y = strtotime($dt->tanggal_kembali);
+
+                            $selisih = ceil(($x-$y)/(60 * 60 * 24));
+
+                            if($selisih > 1){
+                                $total_denda = ($selisih * $denda) + $harga;
+                            }else{
+                                $total_denda = $selisih * $denda;
+                            }
+
+                            $total_biaya = $total + $total_denda ;
+                        ?>
                         <div class="form-group">
-                            <label>Status Rental</label>
-                            <input type="text" disabled class="form-control" value="<?= $dt->status_rental ?>">
+                            <label>Denda</label>
+                            <button type="button" id="total_denda" disabled class="form-control text-white bg-danger" value="Rp. <?= number_format($total_denda,0,',','.') ?>">
+                            Rp. <?= number_format($total_denda,0,',','.') ?></button>
+                        </div>
+
+                         <div class="form-group">
+                            <label>Total Biaya</label>
+                            <button type="button" id="total_biaya" disabled class="form-control text-white bg-success" value="Rp. <?= number_format($total_biaya,0,',','.') ?>">
+                            Rp. <?= number_format($total_biaya,0,',','.') ?></button>
                         </div>
                     </div>
                 </div>

@@ -69,7 +69,9 @@ $(".wa-button").on("click", function () {
 	var sewa = $("#tglsewa").attr("value");
 	var kmbl = $("#tglkembali").attr("value");
 	var jmlh = $("#jmlhHari").attr("value");
-	var total = $("#totalbiaya").attr("value");
+	var byr = $("#total_bayar").attr("value");
+	var denda = $("#total_denda").attr("value");
+	var total = $("#total_biaya").attr("value");
 
 	// Format nomor telepon agar sesuai dengan format WhatsApp (hilangkan spasi, tanda +, dsb.)
 	phoneNumber = phoneNumber.replace(/\s+/g, "");
@@ -97,6 +99,10 @@ $(".wa-button").on("click", function () {
 		kmbl +
 		"\nLama Sewa : " +
 		jmlh +
+		"\nTotal Bayar : " +
+		byr +
+		"\nTotal Denda : " +
+		denda +
 		"\nTotal Biaya : " +
 		total +
 		"\n\n" +

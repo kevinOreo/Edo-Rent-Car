@@ -2,7 +2,7 @@
 	<div class="row">
 		<?php foreach($detail as $dt) : ?>
 		<div class="col-lg-6">
-			<img style="width: 90%; margin-top: 250px;" src="<?php echo base_url('assets/upload/' . $dt->gambar) ?>">
+			<img draggable="false" style="width: 90%; margin-top: 250px;" src="<?php echo base_url('assets/upload/' . $dt->gambar) ?>">
 		</div>
 		<div class="col-lg-6">
 			<div class="card" style="margin-top: 130px; margin-bottom: 50px">
@@ -35,12 +35,12 @@
 								<label>Harga Sewa/Hari</label>
 								<input type="hidden" name="id_mobil" value="<?php echo $dt->id_mobil ?>">
 								<input type="hidden" name="nama_rental" value="<?php echo $dt->nama_rental ?>">
-								<input type="text" name="harga" class="form-control" value="Rp. <?php echo number_format($dt->harga,0,',','.') ?>" readonly>
+								<input type="text" name="harga" class="form-control" value="<?php echo number_format($dt->harga,0,',','.') ?>" readonly>
 							</div>
 
 							<div class="form-group">
 								<label>Denda/Hari</label>
-								<input type="text" name="denda" class="form-control" value="Rp. <?php echo number_format($dt->denda,0,',','.') ?>" readonly>
+								<input type="text" name="denda" class="form-control" value="<?php echo number_format($dt->denda,0,',','.') ?>" readonly>
 							</div>
 
 							<div class="form-group">
@@ -55,12 +55,12 @@
 									<div class="form-group row">
 										<div class="col-lg-6">
 											<label>Tanggal Rental</label>
-											<input type="date" id="tanggal_rental" name="tanggal_rental" class="form-control" required>
+											<input type="datetime-local" id="tanggal_rental" name="tanggal_rental" class="form-control" required>
 											<?php echo form_error('tanggal_rental', '<div class="text-small text-danger">','</div>') ?>
 										</div>
 										<div class="col-lg-6">
 											<label>Tanggal Kembali</label>
-											<input type="date" id="tanggal_kembali" name="tanggal_kembali" class="form-control" required>
+											<input type="datetime-local" id="tanggal_kembali" name="tanggal_kembali" class="form-control" required>
 										</div>
 									</div>
 								</div>	

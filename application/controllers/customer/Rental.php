@@ -33,8 +33,14 @@ class Rental extends CI_Controller
 		$tanggal_rental 	= $this->input->post('tanggal_rental');
 		$tanggal_kembali 	= $this->input->post('tanggal_kembali');
 		$telp				= $this->input->post('telp');
-		$denda 				= $this->input->post('denda');
-		$harga 				= $this->input->post('harga');
+
+
+		$denda		= str_replace(".", "", $this->input->post('denda'));
+		$denda_int	= intval($denda);
+
+		$harga		= str_replace(".", "", $this->input->post('harga'));
+		$harga_int	= intval($harga);
+		
 
 		$x = strtotime($tanggal_rental);
 		$y = strtotime($tanggal_kembali);
@@ -53,8 +59,8 @@ class Rental extends CI_Controller
 			'nama_rental'			=> $nama_rental,
 			'tanggal_rental'		=> $tanggal_rental,		
 			'tanggal_kembali'		=> $tanggal_kembali,
-			'denda'					=> $denda,
-			'harga'					=> $harga,
+			'denda'					=> $denda_int,
+			'harga'					=> $harga_int,
 			'tanggal_pengembalian'	=> '-',
 			'status_rental'			=> 'Belum Selesai',
 			'status_pengembalian'	=> 'Belum Kembali'

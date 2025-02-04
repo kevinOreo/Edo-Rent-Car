@@ -115,49 +115,71 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         // Buka WhatsApp Web di tab baru
         window.open(whatsappURL, '_blank');
     });
-    function addDays(date, days) {
-        const result = new Date(date);
-        result.setDate(result.getDate() + days);
-        return result.toISOString().split("T")[0]; // Format: yyyy-mm-dd
-    }
+    
+// Fungsi untuk menambahkan hari ke tanggal dan mengatur waktu ke jam 23:59 dalam zona waktu lokal
+function addDays(dateTime, days) {
+    const result = new Date(dateTime);
+    result.setDate(result.getDate() + days);
+    result.setHours(23, 59, 0, 0); // Atur ke jam 23:59 dalam waktu lokal
+    
+    return formatDateTimeLocal(result);
+}
 
-    // Fungsi untuk mengatur batas tanggal pada datepicker
-    function setupDatepickers() {
-        const today = new Date().toISOString().split("T")[0];
-        const rentalDateInput = document.getElementById("tanggal_rental");
-        const returnDateInput = document.getElementById("tanggal_kembali");
+// Fungsi untuk mendapatkan waktu saat ini dalam format "datetime-local"
+function getCurrentDateTime() {
+    const now = new Date();
+    now.setSeconds(0, 0); // Set detik dan milidetik ke 0
+    return formatDateTimeLocal(now);
+}
 
-        // Set tanggal minimum untuk "Tanggal Rental"
-        rentalDateInput.setAttribute("min", today);
+// Fungsi untuk mengonversi objek Date ke format "yyyy-MM-ddTHH:mm" dalam zona waktu lokal
+function formatDateTimeLocal(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    
+    return `${year}-${month}-${day}T${hours}:${minutes}`;
+}
 
-        // Event Listener untuk "Tanggal Rental"
-        rentalDateInput.addEventListener("change", function () {
-            const rentalDate = rentalDateInput.value;
-            if (rentalDate) {
-                // Set tanggal minimum dan maksimum untuk "Tanggal Kembali"
-                const minReturnDate = rentalDate;
-                const maxReturnDate = addDays(rentalDate, 3); // Maksimal 3 hari dari tanggal rental
+// Fungsi untuk mengatur batas tanggal pada datepicker
+function setupDatepickers() {
+    const today = getCurrentDateTime();
+    const rentalDateInput = document.getElementById("tanggal_rental");
+    const returnDateInput = document.getElementById("tanggal_kembali");
 
-                returnDateInput.setAttribute("min", minReturnDate);
-                returnDateInput.setAttribute("max", maxReturnDate);
+    // Set tanggal minimum untuk "Tanggal Rental"
+    rentalDateInput.setAttribute("min", today);
 
-                // Reset nilai "Tanggal Kembali" jika di luar rentang
-                if (returnDateInput.value < minReturnDate || returnDateInput.value > maxReturnDate) {
-                    returnDateInput.value = ""; // Reset nilai
-                }
-            } else {
-                // Reset atribut "Tanggal Kembali" jika "Tanggal Rental" dihapus
-                returnDateInput.setAttribute("min", today);
-                returnDateInput.removeAttribute("max");
+    // Event Listener untuk "Tanggal Rental"
+    rentalDateInput.addEventListener("change", function () {
+        const rentalDateTime = rentalDateInput.value;
+        if (rentalDateTime) {
+            // Set tanggal minimum dan maksimum untuk "Tanggal Kembali"
+            const minReturnDateTime = rentalDateTime;
+            const maxReturnDateTime = addDays(rentalDateTime, 3); // Maksimal 3 hari dari tanggal rental, hingga jam 23:59
+
+            returnDateInput.setAttribute("min", minReturnDateTime);
+            returnDateInput.setAttribute("max", maxReturnDateTime);
+
+            // Reset nilai "Tanggal Kembali" jika di luar rentang
+            if (returnDateInput.value < minReturnDateTime || returnDateInput.value > maxReturnDateTime) {
+                returnDateInput.value = ""; // Reset nilai
             }
-        });
+        } else {
+            // Reset atribut "Tanggal Kembali" jika "Tanggal Rental" dihapus
+            returnDateInput.setAttribute("min", today);
+            returnDateInput.removeAttribute("max");
+        }
+    });
 
-        // Set tanggal minimum awal untuk "Tanggal Kembali"
-        returnDateInput.setAttribute("min", today);
-    }
+    // Set tanggal minimum awal untuk "Tanggal Kembali"
+    returnDateInput.setAttribute("min", today);
+}
 
-    // Panggil fungsi saat halaman selesai dimuat
-    document.addEventListener("DOMContentLoaded", setupDatepickers);
+// Panggil fungsi saat halaman selesai dimuat
+document.addEventListener("DOMContentLoaded", setupDatepickers);
 </script>
 </body>
 

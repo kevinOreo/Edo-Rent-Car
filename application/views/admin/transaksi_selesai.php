@@ -12,14 +12,14 @@
 			<input type="hidden" name="id_rental" value="<?php echo $tr->id_rental ?>">
 			<input type="hidden" name="id_mobil" value="<?php echo $tr->id_mobil ?>">
 			<input type="hidden" name="id_driver" value="<?= $tr->id_driver ?>">
-
+			<input type="hidden" name="harga" value="<?= $tr->harga ?>">
 			<input type="hidden" name="tanggal_kembali" value="<?php echo $tr->tanggal_kembali ?>">
 			<input type="hidden" name="denda" value="<?php echo $tr->denda ?>">
 			<input type="hidden" name="telp" value="<?= $tr->noTelp ?>">
-			<div class="form-group">
+			<!-- <div class="form-group">
 				<label>Tanggal Pengembalian</label>
 				<input type="date" name="tanggal_pengembalian" class="form-control" value="<?php echo $tr->tanggal_pengembalian ?>">
-			</div>
+			</div> -->
 
 			<div class="row">
 				<!-- <div class="col-lg-12"> -->
@@ -36,7 +36,7 @@
 					<div class="col-md-4">
 						<div class="form-group">
 							<label>Masukkan tanggal dan waktu pengembalian mobil:</label>
-        					<input type="datetime-local" name="tanggal_kembali" id="returnDateTime" class="form-control">
+        					<input type="datetime-local" name="tanggal_pengembalian" id="returnDateTime" class="form-control">
         					<p id="resultMessage"></p>
 						</div>
 					</div>

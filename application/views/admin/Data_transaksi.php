@@ -39,14 +39,17 @@
 						<!-- <td>Rp. <?php echo number_format($tr->denda,0,',','.')?></td> -->
 						<!-- <td>Rp. <?php echo number_format($tr->total_denda,0,',','.')?></td> -->
 						<?php 
-                                $x = strtotime($tr->tanggal_kembali);
-                                $y = strtotime($tr->tanggal_rental);
-                                $jmlh = abs(($x - $y)/(60*60*24));
+							$x = explode("T", $tr->tanggal_kembali)[0];
+							$y = explode("T", $tr->tanggal_rental)[0];
+
+							$x1 = strtotime($x);
+							$y1 = strtotime($y);
+							$jmlh = floor(($x1 - $y1)/(60*60*24));
                         ?>
 						<input type="hidden" name="jumlah" id="jumlah" value="<?= $jmlh ?>">
 						<td>
 							<?php 
-								if($tr->tanggal_pengembalian=="0000-00-00"){
+								if($tr->tanggal_pengembalian=="0000-00-00 00:00:00"){
 									echo "-";
 								}else{
 									echo date('d/m/Y', strtotime($tr->tanggal_pengembalian));

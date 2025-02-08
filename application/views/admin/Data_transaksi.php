@@ -117,7 +117,7 @@
 
 									<div class="row">
 										<a class="btn btn-sm btn-success mr-2" href="<?php echo base_url('admin/transaksi/transaksi_selesai/' . $tr->id_rental) ?>"><i class="fas fa-check"></i></a>
-										<a class="btn btn-sm btn-danger delete-button" href="<?php echo base_url('admin/transaksi/batal_transaksi/' . $tr->id_rental) ?>"><i class="fas fa-times"></i></a>
+										<a class="btn btn-sm btn-danger" id="cancel_button" href="#" data-toggle="modal" data-target="#modalBatal"><i class="fas fa-times"></i></a>
 									</div>
 
 								<?php } ?>
@@ -131,4 +131,33 @@
 			</tbody>
 		</table>
 	</section>
+	<!-- Modal -->
+	<div class="modal fade" id="modalBatal" tabindex="-1" role="dialog" aria-labelledby="modalBatalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalBatalLabel">Konfirmasi Pembatalan</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form id="formBatal" method="post" action="<?php echo base_url('admin/transaksi/batal_transaksi/' . $tr->id_rental); ?>">
+				<div class="modal-body">
+				<p>Pilih alasan pembatalan transaksi:</p>
+				<select class="form-control" name="alasan_batal" id="alasan_batal">
+					<option value="">-- Pilih Alasan --</option>
+					<option value="0">Bukti transfer tidak sesuai</option>
+					<option value="1">Nama pengirim tidak sesuai</option>
+					<option value="2">Nominal transfer tidak sesuai</option>
+				</select>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+				<button type="submit" class="btn btn-danger">Batalkan Transaksi</button>
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+
 </div>

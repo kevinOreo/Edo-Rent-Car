@@ -8,24 +8,71 @@ if (flashData) {
 	});
 }
 
-$(".delete-button").on("click", function (e) {
-	e.preventDefault();
-	const href = $(this).attr("href");
+// $(".delete-button").on("click", function (e) {
+// 	e.preventDefault();
+// 	const href = $(this).attr("href");
 
-	Swal.fire({
-		title: "Yakin Akan Menghapus Data ?",
-		text: "Data Akan Hilang!",
-		icon: "warning",
-		showCancelButton: true,
-		confirmButtonColor: "#3085d6",
-		cancelButtonColor: "#d33",
-		confirmButtonText: "Hapus Data",
-	}).then((result) => {
-		if (result.isConfirmed) {
-			document.location.href = href;
+// 	Swal.fire({
+// 		title: "Yakin Akan Menghapus Data ?",
+// 		text: "Data Akan Hilang!",
+// 		icon: "warning",
+// 		showCancelButton: true,
+// 		confirmButtonColor: "#3085d6",
+// 		cancelButtonColor: "#d33",
+// 		confirmButtonText: "Hapus Data",
+// 	}).then((result) => {
+// 		if (result.isConfirmed) {
+// 			document.location.href = href;
+// 		}
+// 	});
+// });
+
+	$(document).ready(function () {
+	// Tangkap event submit form pembatalan
+		$('#formBatal').on('submit', function (e) {
+		e.preventDefault(); // Cegah submit langsung
+
+		var form = $(this);
+		var alasan = form.find('select[name="alasan_batal"]').val(); // Ambil alasan pembatalan
+
+		if (alasan === "") {
+		Swal.fire({
+			icon: 'warning',
+			title: 'Oops...',
+			text: 'Silakan pilih alasan pembatalan!',
+		});
+		return;
 		}
+
+		// Tampilkan SweetAlert2 konfirmasi
+		Swal.fire({
+		title: 'Apakah Anda yakin?',
+		text: "Transaksi akan dibatalkan!",
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#d33',
+		cancelButtonColor: '#3085d6',
+		confirmButtonText: 'Ya, batalkan!',
+		cancelButtonText: 'Batal'
+		}).then((result) => {
+		if (result.isConfirmed) {
+			Swal.fire({
+			title: 'Diproses...',
+			text: 'Pembatalan transaksi sedang diproses.',
+			icon: 'info',
+			allowOutsideClick: false,
+			showConfirmButton: false,
+			timer: 1500
+			});
+
+			setTimeout(() => {
+			form.off('submit').submit(); // Submit form setelah konfirmasi
+			}, 1500);
+		}
+		});
+		});
 	});
-});
+
 
 // Menggunakan jQuery untuk mendengarkan event click pada elemen dengan class 'wa-button'
 $(".wa-button").on("click", function () {

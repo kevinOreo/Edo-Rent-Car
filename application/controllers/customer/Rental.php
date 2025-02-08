@@ -63,7 +63,8 @@ class Rental extends CI_Controller
 			'harga'					=> $harga_int,
 			'tanggal_pengembalian'	=> '-',
 			'status_rental'			=> 'Belum Selesai',
-			'status_pengembalian'	=> 'Belum Kembali'
+			'status_pengembalian'	=> 'Belum Kembali',
+			'status_batal'			=> NULL
 		);
 
 		$this->rental_model->insert_data($data, 'transaksi');

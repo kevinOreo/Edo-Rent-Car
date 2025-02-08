@@ -153,16 +153,40 @@
 			redirect('admin/transaksi');
 		}
 
-		public function batal_transaksi($id){
+	public function batal_transaksi($id){
 			$this->rental_model->admin_login();
+
+			$alasan_batal = $this->input->post('alasan_batal');
+
+		    // Ambil data transaksi berdasarkan ID rental
 			$where = array('id_rental' => $id);
 			$data  = $this->rental_model->get_where($where, 'transaksi')->row();
 
+			// Update data mobil = 1 (Tersedia)
 			$where2 = array('id_mobil' => $data->id_mobil);
 			$data2	= array('status'   => '1');
-
 			$this->rental_model->update_data('mobil', $data2, $where2);
-			$this->rental_model->delete_data($where, 'transaksi');
+
+			// Hapus Bukti_Pembayaran lama
+			$bukti = $this->rental_model->get_where($where, 'transaksi')->row();
+
+			// Jika ada bukti pembayaran, hapus file gambar dari folder
+			if($bukti && !empty($bukti->bukti_pembayaran)){
+				$file_path = FCPATH . 'assets/upload' . $bukti->bukti_pembayaran;
+				if(file_exists($file_path)){
+					unlink($file_path);
+				}
+			}
+
+
+			// Update Transaksi -> status_batal
+			$data_transaksi = array(
+				'status_batal' => $alasan_batal,
+				'status_pembayaran' => '0',
+				'bukti_pembayaran' => ''
+			);
+
+			$this->rental_model->update_data('transaksi', $data_transaksi, $where);
 
 			$this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
 				  Transaksi Berhasil dibatalkan

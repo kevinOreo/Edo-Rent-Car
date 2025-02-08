@@ -86,6 +86,21 @@
 								<td>: </td>
 								<td><button class="btn btn-sm btn-success" disabled="disabled">Rp. <?php echo number_format(($tr->harga * $jmlHari),0,',','.') ?></button></td>
 							</tr>
+							<?php if(!empty($tr->status_batal)) { ?>
+							<tr class="text-warning">
+								<th>Alasan Dibatalkan</th>
+								<td>:</td>
+								<?php if($tr->status_batal == '0'){ ?>
+								<td><button class="btn btn-sm btn-warning" disabled="disabled">Bukti transfer tidak sesuai</button>
+								<?php } ?>
+								<?php if($tr->status_batal == '1') { ?>
+								<td><button class="btn btn-sm btn-warning" disabled="disabled">Nama pengirim tidak sesuai</button>
+								<?php } ?>
+								<?php if($tr->status_batal == '2') { ?>
+								<td><button class="btn btn-sm btn-warning" disabled="disabled">Nominal transfer tidak sesuai</button>
+								<?php } ?>
+							<?php } ?>
+							</tr>
 							<?php 
 								if($tr->status_pembayaran == '1'){ ?>
 								<tr class="text-danger">
@@ -129,7 +144,6 @@
 						
 					  
 					</ul>
-
 					<?php if(empty($tr->bukti_pembayaran)) { ?>	
 						<!-- Button trigger modal -->
 						<button style="width: 100%" type="button" class="btn btn-danger btn-sm mt-3" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-upload" aria-hidden="true"></i>
